@@ -1,3 +1,4 @@
+//A triangle sorter designed by Harrison Lane
 #include <iostream>
 #include <fstream>
 using namespace std;
@@ -11,6 +12,7 @@ int main()
     int counter2 = 0;
     int counter3 = 0;
     int counter4 = 0;
+    int valid_tri = 0;
     ifstream Tri_file;
     Tri_file.open("/home/ti239/Documents/Tri_value.txt");
     Tri_file >> a >> b >> c;
@@ -41,11 +43,12 @@ int main()
 		    counter4++;
 	    }
     }
-	
+	valid_tri = counter1 + counter2 + counter3;
+        cout << "Read in " << counter << " data sets.\n\n";
         cout << "There were " << counter1 << " equilateral\n";
         cout << "There were " << counter2 << " Isosceles\n";
         cout << "There were " << counter3 << " Scalene\n";
         cout << "There were " << counter4 << " losers\n";
-        cout << "Read in " << counter << " data sets.\n\n";
+        cout << "There were " << valid_tri << " Triangles.\n";
 	return 0;
 }
